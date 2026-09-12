@@ -23,7 +23,7 @@ L'objectiu és tenir el bucle de votació funcionant tan aviat com sigui possibl
     - Versionat a `data/prompts/v1/` al repositori.
 - **Inferència executada i desada**:
     - *Script* `scripts/inferencia.py` que itera sobre les 90 combinacions (3 models × 30 *prompts*).
-    - Models de la prova de concepte: Qwen 3.6 27B, Mistral Small 3.2 24B Instruct i Gemma 3 27B Instruct.
+    - Models de la prova de concepte: Qwen 3.8 27B, Mistral Small 3.2 24B Instruct i Gemma 3 27B Instruct.
     - Sempre que sigui possible, **un únic motor d'inferència** per als 3 models — preferentment Hugging Face Transformers, que tot i no ser el més ràpid és la implementació de referència i la que minimitza el risc d'introduir variacions no atribuïbles al model.
     - Bolcat dels 90 JSONs a `data/inferencies/v1/`.
     - Metadades: `seed`, `quantization` i `model_version` per garantir reproduïbilitat.

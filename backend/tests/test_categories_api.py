@@ -5,6 +5,7 @@ def test_get_categories_returns_catalog_sorted_by_code(client):
     categories = response.json()["categories"]
     assert [category["code"] for category in categories] == [
         "correccio",
+        "generacio",
         "reformulacio",
         "traduccio",
     ]

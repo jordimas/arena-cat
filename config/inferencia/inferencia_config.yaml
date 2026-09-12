@@ -10,12 +10,12 @@ parametres_generacio:
   max_new_tokens: 1024
   min_token_len: 25
   # System prompt idèntic en intenció per a tots
-  system_prompt: "Ets un assistent d'intel·ligència artificial útil, precís i que respon exclusivament en llengua catalana. Contesta només amb el que es demana sense cap explicació ni text addicional."
+  system_prompt: "Ets un assistent d'intel·ligència artificial útil, precís i que respon exclusivament en llengua catalana. Contesta només amb el que es demana sense cap explicació ni text addicional. Contesta sempre en text pla, sense format Markdown o HTML ni elements com ara taules."
 
 models:
-  # 1. Qwen 3.6 27B
-  - id: "qwen3.6-27b"
-    model_name: "Qwen/Qwen3.6-27B"
+  # 1. Qwen 3.8 27B
+  - id: "qwen3.8-27b"
+    model_name: "Qwen/Qwen3.8-27B"
     revision: "main"
     torch_dtype: "bfloat16"
     device_map: "auto"

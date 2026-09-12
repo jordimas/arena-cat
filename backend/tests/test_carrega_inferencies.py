@@ -156,7 +156,7 @@ def test_versioned_v1_prompts_follow_loader_naming_convention(session, tmp_path)
     summary = loader.run_load(session, prompts_dir, inferencies_dir)
 
     assert summary.prompts.errors == 0
-    assert summary.prompts.inserted == 30
+    assert summary.prompts.inserted == 40
 
 
 def test_load_is_idempotent(session, dirs):

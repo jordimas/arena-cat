@@ -27,9 +27,9 @@ export interface PromptParts {
 
 /** Separa l'enunciat en instrucció i text d'origen.
  *
- * Les tres categories segueixen la mateixa forma: una instrucció, un salt de
- * línia i el text. Alguns enunciats de correcció acaben la instrucció amb dos
- * punts i no tenen salt, d'aquí el segon intent.
+ * Les categories de transformació segueixen la mateixa forma: una instrucció,
+ * un salt de línia i el text. Alguns enunciats de correcció acaben la instrucció
+ * amb dos punts i no tenen salt, d'aquí el segon intent.
  */
 export function splitPrompt(prompt: string): PromptParts {
   const newline = prompt.indexOf("\n");

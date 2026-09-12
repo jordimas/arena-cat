@@ -29,8 +29,10 @@ check:
 format:
 	cd backend && uv run ruff format .
 
+# Paràmetres opcionals: CONFIG, DEVICE_MAP, CATEGORY i FORCE.
+# Exemple: make inferences CATEGORY=traduccio
 inferences:
-	uv run --group inference python scripts/inferencia.py $(if $(CONFIG),--config $(CONFIG)) $(if $(DEVICE_MAP),--device-map $(DEVICE_MAP)) $(if $(FORCE),--force)
+	uv run --group inference python scripts/inferencia.py $(if $(CONFIG),--config $(CONFIG)) $(if $(DEVICE_MAP),--device-map $(DEVICE_MAP)) $(if $(CATEGORY),--prompt-prefix $(CATEGORY)_) $(if $(FORCE),--force)
 
 # Publica les inferències generades a la branca de dades.
 publish_inferences:

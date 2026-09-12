@@ -1,4 +1,12 @@
 categories:
+  - code: generacio
+    name: Generació
+    description: Genera un text.
+    evaluation_instructions: |-
+      - Compliment de les instruccions del prompt.
+      - Coherència i claredat del text.
+      - Correcció i naturalitat en català.
+      - Adequació del registre i del contingut.
   - code: correccio
     name: Correcció
     description: Corregeix aquest text.
