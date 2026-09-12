@@ -20,7 +20,7 @@ RECOMMENDED_THRESHOLD = 0.40
 TRANSLATION_CATEGORY = "traduccio"
 
 MODEL_DISPLAY = {
-    "qwen3.6-27b": "Qwen/Qwen3.6-27B",
+    "qwen3.8-27b": "Qwen/Qwen3.8-27B",
     "mistral-small-3.2-24b-instruct-2506": (
         "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
     ),

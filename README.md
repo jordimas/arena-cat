@@ -143,7 +143,7 @@ La fita té **dues parts**: primer construir la plataforma i, tot seguit, demana
 
 Models (3):
 
-- Qwen 3.6 27B (`Qwen/Qwen3.6-27B`)
+- Qwen 3.8 27B (`Qwen/Qwen3.8-27B`)
 - Mistral Small 3.2 24B Instruct (`mistralai/Mistral-Small-3.2-24B-Instruct-2506`)
 - Gemma 3 27B Instruct (`google/gemma-3-27b-it`)
 

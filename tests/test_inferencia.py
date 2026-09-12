@@ -130,7 +130,7 @@ class TestInferencia(unittest.TestCase):
                 "--prompt-prefix",
                 "traduccio_",
                 "--model-id",
-                "qwen3.6-27b",
+                "qwen3.8-27b",
                 "--model-id",
                 "gemma-3-27b-it",
             ],
@@ -138,7 +138,7 @@ class TestInferencia(unittest.TestCase):
             args = inferencia.parse_args()
 
         self.assertEqual(args.prompt_prefix, "traduccio_")
-        self.assertEqual(args.model_id, ["qwen3.6-27b", "gemma-3-27b-it"])
+        self.assertEqual(args.model_id, ["qwen3.8-27b", "gemma-3-27b-it"])
 
     def test_parse_args_accepts_force(self):
         with patch("sys.argv", ["inferencia.py", "--force"]):
