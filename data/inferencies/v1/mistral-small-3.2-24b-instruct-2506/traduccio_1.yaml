@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 1b3f806e9d0b67bab73cf6395e0c2a867ea89c90536ee0b37b6a87b330dde853
@@ -23,22 +24,18 @@ model:
   model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   revision: main
 output:
-  answer: 'MARTA: Fa tres dies que dic al meu pare que trucar a la companyia, perquè
-    el wifi va a la deriva.
+  answer: 'MARTA: Fa tres dies que dic al meu pare que trigi a trucar a la companyia,
+    perquè el wifi va a la deriva.
 
+    NIL: Un altre cop? La setmana passada vas dir que ja ho havien arreglat.
 
-    NIL: De nou? La setmana passada vas dir que ja ho havien arreglat.
+    MARTA: Això va dir ell, però no me ho crec. Ayer se''m va tallar la videotrucada
+    de classe dues vegades i després el grup va començar a enviar-me memes com si
+    fos culpa meva.
 
+    NIL: Igual és el router, que està més vell que la taverna.
 
-    MARTA: Això va dir ell, però jo no me ho crec. Ayer se''m va tallar la videotrucada
-    de classe dues vegades i després el grup va començar a enviarme memes com si fos
-    culpa meva.
-
-
-    NIL: Igual és el router, que està més vell que el carrer del mig.
-
-
-    MARTA: Doncs si això continua així, demà m''hi presento a la botiga. I si cal,
+    MARTA: Doncs si això segueix així, demà m''hi presento a la botiga. I si cal,
     hi porto el tècnic de la oreja.'
 prompt:
   id: traduccio_1
@@ -47,6 +44,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

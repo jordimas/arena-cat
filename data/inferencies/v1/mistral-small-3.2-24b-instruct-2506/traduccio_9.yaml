@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 11788666b977ceb87beb847841499c9a770a348f3291a366fd7990ca4bfc837d
@@ -23,16 +24,16 @@ model:
   model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   revision: main
 output:
-  answer: 'Quan arriba la nit, la nena dobla la roba damunt de la cadira, se li posa
-    el pijama preferit i s''hi enfila al llit amb l''osset de peluix que ja té una
-    orella torçada. La seva mare deixa la porta entreoberta perquè hi entri una ratllada
-    de llum del passadís, i la casa comença a parlar baixet: xiula una fusta, suspira
-    un finestral, s''apaga el darrer grifo.
+  answer: 'Quan arriba la nit, la nena doblega la roba sobre la cadira, se posa el
+    seu pijama preferit i s''hi enfila al llit amb l''osset de peluix que ja té una
+    orella torçada. La seva mare deixa la porta entreoberta perquè hi passi una ratlleta
+    de llum del passadís, i la casa comença a parlar baixet: xiscla una fusta, suspira
+    un finestró, s''apaga l''últim grif.
 
 
-    Des de l''habitació es veu el cel ple d''estrelles. Una d''elles, la més petita,
-    li canta una cançó de bressol amb una veu molt baixeta, tan baixeta que només
-    l''escolten qui ja estan a punt de somiar.'
+    Des de la cambra es veu el cel ple d''estrelles. Una d''elles, la més petita,
+    li canta una cançó de bres per a dormir en una veu molt baixeta, tan baixeta que
+    només l''escolten aquells que ja estan a punt de somiar.'
 prompt:
   id: traduccio_9
   path: data/prompts/v1/traduccio_9.txt
@@ -40,6 +41,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

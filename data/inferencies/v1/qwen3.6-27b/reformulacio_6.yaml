@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 9cb583b4cd49e7acb7f8bad681a8d760ed4b6382a014139d9b6af3c252b4d1fd
@@ -23,22 +24,21 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: 'NARRADOR: El mercat municipal reobrirà dissabte, després de sis setmanes
-    d’obres intensives. S’han renovat la teulada, els punts de llum i les cambres
+  answer: 'NARRADOR: Dissabte, el mercat municipal reobrirà les seves portes després
+    de sis setmanes d''obres. S''han renovat la teulada, els punts de llum i les cambres
     frigorífiques.
 
 
-    VEU 1: Les parades de peix i fruita tornen al passadís central, però la fleca
-    ocuparà un espai provisional fins al novembre.
+    VEU 1: I on quedem amb les parades?
 
 
-    VEU 2: Exacte. A més, a les deu del matí hi haurà una visita guiada per als veïns
-    i una demostració de cuina amb productes de temporada.
+    VEU 2: Les de peix i fruita tornen al passadís central. La fleca, però, tindrà
+    un espai provisional fins al novembre.
 
 
-    NARRADOR: Tot preparat per a aquesta nova etapa, amb millores estructurals i una
-    programació especial per celebrar la tornada de l’activitat comercial al cor del
-    barri.'
+    NARRADOR: A les deu del matí, els veïns podran gaudir d''una visita guiada i una
+    demostració de cuina amb productes de temporada. Un dia especial per recuperar
+    l''essència del barri.'
 prompt:
   id: reformulacio_6
   path: data/prompts/v1/reformulacio_6.txt
@@ -46,6 +46,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

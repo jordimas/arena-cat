@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 96eebac24581fd928fb364bbcf2c7e3ff096a6287eec32cce4daedf05580534c
@@ -24,10 +25,10 @@ model:
   revision: main
 output:
   answer: 'La derivada serveix per saber com canvia una cosa en un moment exacte.
-    La integral serveix per sumar moltes parts petites i saber quant s''ha acumulat
-    una quantitat, com l''espai que hi ha sota una línia en un dibuix. Derivar i integrar
-    són com fer el camí i després tornar enrere: si fas una cosa i després l''altra,
-    tornes a tenir el punt de partida.'
+    L''integral serveix per sumar moltes parts petites i saber quant s''ha acumulat
+    un total, com l''espai que hi ha sota una línia en un dibuix. Aquests dos conceptes
+    són com el l''anar i el tornar: si fas una cosa i després l''altra, acabes tornant
+    al punt de partida, sempre que la línia no estigui tallada.'
 prompt:
   id: reformulacio_1
   path: data/prompts/v1/reformulacio_1.txt
@@ -35,6 +36,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

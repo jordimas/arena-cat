@@ -1,0 +1,58 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: f5389d3602629499aacd80ee096e3fa071f7c781a045f4f07a55957dbdc40805
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: gemma-4-26b-a4b-it
+  model_name: google/gemma-4-26B-A4B-it
+  revision: main
+output:
+  answer: 'Benvolgut director de la Biblioteca Municipal,
+
+
+    Em dirigeixo a vosté per a sol·licitar formalment una ampliació de l''horari de
+    la sala d''estudi durant les pròximes setmanes, coincidint amb les proves d''accés
+    a la universitat. Molts estudiants necessitem un espai tranquil i equipat per
+    a la preparació final d''aquests exàmens tan determinants.
+
+
+    Per aquest motiu, proposeixo que la sala s''ampliï de manera temporal, oferint
+    servei de dijous a diestre de 08:00 a 22:00 hores. Aquesta mesura seria d''una
+    gran utilitat per a la comunitat estudiantil del barri.
+
+
+    Resto a la seva disposició per a qualsevol aclariment i agraeixo de debò la seva
+    atenció.
+
+
+    Cordialment,
+
+
+    Un usuari de la biblioteca'
+prompt:
+  id: generacio_8
+  path: data/prompts/v1/generacio_8.txt
+  sha256: f5389d3602629499aacd80ee096e3fa071f7c781a045f4f07a55957dbdc40805
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

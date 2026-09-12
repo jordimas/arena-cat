@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: af1487949a676806680275298f4324ad21ae64086dc489621374b119f5e85669
@@ -27,7 +28,7 @@ output:
 
 
     La vostra comanda VX-48291 arribarà més tard del previst perquè un camió s''ha
-    quedat retenut al nostre centre de Riba-roja i ha desorganitzat tota la ruta de
+    quedat aturat al nostre centre de Riba-roja i ha desorganitzat tota la ruta de
     repartiment. El nou horari de repartiment és el 18 de setembre, entre les 9.00
     i les 14.00 hores.
 
@@ -42,6 +43,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

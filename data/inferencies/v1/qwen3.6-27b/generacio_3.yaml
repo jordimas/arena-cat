@@ -1,0 +1,50 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 55b02646ac4f5b342716bffeda24d1cf986e97729c337743598518570b4bfa51
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: qwen3.6-27b
+  model_name: Qwen/Qwen3.6-27B
+  revision: main
+output:
+  answer: 'El Modernisme català va néixer a finals del segle XIX com una reacció contra
+    la industrialització. Aquesta nova època buscava connectar l''art amb la natura
+    i la tradició popular, tot donant valor a la identitat catalana. Era un temps
+    de gran esplendor cultural i arquitectònic a Barcelona.
+
+
+    Dos trets clau són les formes orgàniques i l''ús de colors vius. Imagina les façanes
+    de les cases com si fossin coses naturals: corbes suaus que recorden onades del
+    mar o fulles de les plantes, sense angles durs ni línies rectes avorrides. Un
+    exemple perfecte és la Casa Batlló, que sembla una criatura viva. A més, els artistes
+    utilitzaven vitralls amb colors intensos i materials com el mosaic per crear efectes
+    lluminosos màgics. L''objectiu era que l''art envoltés les persones i les fes
+    sentir part d''un món més poètic i proper a la natura, allunyant-se de la fredor
+    de les fàbriques.'
+prompt:
+  id: generacio_3
+  path: data/prompts/v1/generacio_3.txt
+  sha256: 55b02646ac4f5b342716bffeda24d1cf986e97729c337743598518570b4bfa51
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-10T17:08:18.892866Z'

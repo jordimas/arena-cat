@@ -1,0 +1,62 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 9ebdc2c5f02d637f237de57e71757c0d8bde54f1bb403b1e6cab11a6a6f90813
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: mistral-small-3.2-24b-instruct-2506
+  model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
+  revision: main
+output:
+  answer: 'Assumpte: Solicitud de prorroga per lliurament de treball
+
+
+    Estimada professora [Cognoms],
+
+
+    L''escribo per demanar-li si seria possible disposar de dos dies addicionals per
+    lliurar el treball de la matèria [Nom de la matèria]. Entenc que aquesta petició
+    s''ajusta a la normativa establerta.
+
+
+    Aquesta demora es deu al fet que coincideix amb la preparació d''una actuació
+    castellera que tinc programada. Reconec que m''hauria d''haver organitzat millor
+    i li demano disculpes per les molèsties que pugui causar.
+
+
+    Proposo lliurar el treball el [nova data], si li és possible. Quedaré expectant
+    la seva resposta.
+
+
+    Gràcies per la seva comprensió.
+
+
+    Atentament,
+
+    [El teu nom]'
+prompt:
+  id: generacio_1
+  path: data/prompts/v1/generacio_1.txt
+  sha256: 9ebdc2c5f02d637f237de57e71757c0d8bde54f1bb403b1e6cab11a6a6f90813
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

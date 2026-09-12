@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 768f7c4ee89e80eae25b6ab770e7b3c0f71ccd24d4f96557bcffd9e2c9039436
@@ -23,15 +24,12 @@ model:
   model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   revision: main
 output:
-  answer: Ahir al vespre, després de dinar, vaig decidir sortir a passejar amb el
-    meu gos per la platja del meu barri a Reus. M'agrada molt fer aquest camí al capvespre,
-    ja que és un moment tranquil i agradable. En passar pel costat del mar, vaig veure
-    els nens del veí de casa meva, que viuen just davant de la platja, jugant amb
-    pales i cubells a la sorra. Sempre és una escena encantadora veure-los jugar tan
-    contents i sense preocupacions. Mentre els observava, vaig pensar que, com cada
-    estiu, la nostra casa es farà més animada amb la visita de la família i els amics.
-    És una època de l'any que sempre espero amb il·lusió, perquè ens reuneix a tots
-    i omple la casa de rialles i records inoblidables.
+  answer: Ahir al vespre, mentre portava el gos a passejar per la platja, em va cridar
+    l'atenció veure els nens del veí jugant alegrement a la sorra. Eren uns quants,
+    i semblaven estar passant-se-ho en gran. Recordo que, cada estiu, la nostra casa
+    es transforma en un punt de trobada per a la família i els amics. Penso que aquest
+    any no serà diferent, i que, com cada estiu, la casa s'omplirà de gent, de rialles
+    i de moments inoblidables.
 prompt:
   id: reformulacio_5
   path: data/prompts/v1/reformulacio_5.txt
@@ -39,6 +37,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

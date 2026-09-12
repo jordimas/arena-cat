@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: e19385eb7bdecef29a82db0a611c3f1b5d8372854bc9c07eaf53ff61a4b4f514
@@ -23,11 +24,11 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: Per protegir el vostre compte, activeu la seguretat extra. Així, a més de
-    la contrasenya que ja coneixeu, el sistema us enviarà un número temporal al mòbil
-    cada vegada que entreu. D’aquesta manera, encara que algú aconseguís la vostra
-    contrasenya, no podria entrar al vostre compte sense tenir també aquest número
-    que només rebreu vosaltres.
+  answer: Per posar més seguretat al teu compte, activa una opció que et demana dues
+    coses per entrar. A part de la teva contrasenya normal, el sistema t'enviarà un
+    número de vegada única al teu telèfon mòbil. D'aquesta manera, fins i tot si algú
+    aconsegueix la teva contrasenya sense permís, no podrà entrar al teu compte perquè
+    no tindrà aquest número que només tu rebràs al mòbil.
 prompt:
   id: reformulacio_10
   path: data/prompts/v1/reformulacio_10.txt
@@ -35,6 +36,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

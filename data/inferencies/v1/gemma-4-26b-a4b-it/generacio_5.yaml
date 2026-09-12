@@ -1,0 +1,58 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 9cde3eafcc82a42a9541dd3d78c3aee0cdcefafc81d7f3c821832705fe4a2d9b
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: gemma-4-26b-a4b-it
+  model_name: google/gemma-4-26B-A4B-it
+  revision: main
+output:
+  answer: 'Benvolgut director del museu,
+
+
+    Em dirigeixo a vostè per expressar el meu gran interès en realitzar unes pràctiques
+    d''estiu a la vostra institució. Com a estudiant de Humanitats, tinc una passió
+    profunda per la preservació de la memòria col·lectiva i la divulgació cultural.
+    La meva experiència col·laborant amb l''arxiu fotogràfic del barri m''ha permès
+    desenvolupar competències pràctiques en la gestió de documents i la catalogació
+    de materials històrics.
+
+
+    L''objectiu principal d''aquestes pràctiques és aplicar els meus coneixements
+    acadèmics en un entorn professional, amb l''específic desig d''aprendre a apropar
+    el patrimoni local a públics diversos i heterogenis. Estic convençuda que la meva
+    dedicació i la meva base formativa poden aportar valor al vostre equip de treball.
+    Resto a la seva disposició per concertar una entrevista.
+
+
+    Cordialment,
+
+
+    La candidata'
+prompt:
+  id: generacio_5
+  path: data/prompts/v1/generacio_5.txt
+  sha256: 9cde3eafcc82a42a9541dd3d78c3aee0cdcefafc81d7f3c821832705fe4a2d9b
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

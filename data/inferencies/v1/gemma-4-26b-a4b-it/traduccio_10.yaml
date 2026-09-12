@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: e9e1504ae8699d7232b1736bb804d68e0172a6bedf8003f2ad1a5e91d7704cbd
@@ -24,15 +25,15 @@ model:
   revision: main
 output:
   answer: 'Des que surto a córrer els matins em sento molt millor, tot i que al principi
-    em va costar agafar el ritme. Em donava una mica de preguiça aixecar-me, mirava
-    el rellotge cada dos minuts i tornava a casa pensant que això no era per a mi.
+    em va costar agafar el ritme. Em donava una mica de ràbia aixecar-me, mirava el
+    rellotge cada dos minuts i tornava a casa pensant que aquell no era el meu camí.
     Ara vaig a la sala d''exercici tres dies a la setmana per fer exercici físic,
     una mica de força i una classe d''estiraments que em deixa com nou.
 
 
     La meva entrenadora diu que, si segueixo així i no em salto els descansos, en
     un mes notaré un canvi increïble. Jo no sé si serà per tant, però almenys ja no
-    surto quan surto les escales.'
+    surto enfarinat quan sobio les escales.'
 prompt:
   id: traduccio_10
   path: data/prompts/v1/traduccio_10.txt
@@ -40,6 +41,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

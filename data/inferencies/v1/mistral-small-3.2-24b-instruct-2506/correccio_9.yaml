@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 6b7077439097a44bcb16cb19b8d8b3a31c5b83b3ad3f2dd54a81542bb460f370
@@ -25,12 +26,11 @@ model:
 output:
   answer: He llegit dos llibres aquest estiu i, tot i que tots dos m'han agradat,
     són força diferents. El primer té una història plena d'acció i manté l'interès
-    des de la primera pàgina. Els personatges són molt dinàmics i sempre succeeixen
-    coses inesperades. En canvi, el segon és més tranquil i reflexiu. Es centra en
-    les emocions dels protagonistes i fa pensar sobre les decisions que prenem a la
-    vida. Personalment, m'ho he passat millor amb el primer perquè és més entretingut,
-    però crec que el segon deixa una empremta més profunda. Depèn molt del que busqui
-    cada lector.
+    des de la primera pàgina. Els personatges són molt dinàmics i sempre passen coses
+    inesperades. En canvi, el segon és més tranquil i reflexiu. Es centra en les emocions
+    dels protagonistes i fa pensar sobre les decisions que prenem a la vida. Personalment,
+    m'ho he passat millor amb el primer perquè és més entretingut, però crec que el
+    segon deixa una empremta més profunda. Depèn molt del que busqui cada lector.
 prompt:
   id: correccio_9
   path: data/prompts/v1/correccio_9.txt
@@ -38,6 +38,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

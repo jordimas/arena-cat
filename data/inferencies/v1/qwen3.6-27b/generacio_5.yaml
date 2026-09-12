@@ -1,0 +1,62 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 9cde3eafcc82a42a9541dd3d78c3aee0cdcefafc81d7f3c821832705fe4a2d9b
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: qwen3.6-27b
+  model_name: Qwen/Qwen3.6-27B
+  revision: main
+output:
+  answer: 'Benvolguts membres de la comissió de selecció,
+
+
+    Us escric per expressar el meu profund interès en participar en les pràctiques
+    d''estiu al vostre museu d''història local. Com a estudiant de Humanitats, considero
+    que la comprensió del passat és fonamental per entendre la identitat col·lectiva
+    actual.
+
+
+    La meva trajectòria acadèmica m''ha proporcionat les eines analítiques necessàries,
+    però és la meva experiència pràctica la que ha definit la meva vocació. Recentment,
+    he col·laborat en la digitalització i catalogació de l''arxiu fotogràfic del meu
+    barri, una tasca que m''ha permès valorar la importància de preservar la memòria
+    visual com a patrimoni viu. Aquesta vivència m''ha convençut de la necessitat
+    urgent de democratitzar l''accés a aquests recursos.
+
+
+    El meu objectiu principal és aprendre metodologies innovadores per apropar el
+    patrimoni històric a públics diversos, trencant barreres i fent-lo més accessible
+    i atractiu. Estic convençuda que la meva passió per la història local, combinada
+    amb la meva capacitat d''adaptació i treball en equip, em permetrà contribuir
+    activament als projectes educatius del museu. Agraït per la vostra atenció, rest
+    a la vostra disposició per ampliar qualsevol dubte.
+
+
+    Atentament,'
+prompt:
+  id: generacio_5
+  path: data/prompts/v1/generacio_5.txt
+  sha256: 9cde3eafcc82a42a9541dd3d78c3aee0cdcefafc81d7f3c821832705fe4a2d9b
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-10T17:08:18.892866Z'

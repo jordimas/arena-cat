@@ -1,0 +1,47 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: b900189de6e4123e3cf58085c44323ad021694898741b7a1f7c3c03345b682b2
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: qwen3.6-27b
+  model_name: Qwen/Qwen3.6-27B
+  revision: main
+output:
+  answer: 'La gastronomia catalana constitueix un patrimoni immaterial essencial,
+    on les receptes familiars actuen com a vincles afectius i identitaris entre generacions.
+    Aquest treball de recerca analitza els mecanismes de transmissió oral i escrita
+    d’aquest coneixement culinari, explorant com es manté viva la memòria gastronòmica
+    en un context social canviant. La pregunta de recerca central és: com influeixen
+    els canvis socioculturals en la preservació de les receptes tradicionals catalanes?
+    Per respondre-la, es combinaran entrevistes semiestructurades a membres de diferents
+    edats amb l’anàlisi comparativa de receptaris familiars antics i actuals. Aquesta
+    metodologia mixta permetrà contrastar la narrativa oral amb el registre documental,
+    identificant tant les pèrdues com les adaptacions que reflecteixen l’evolució
+    de la cuina domèstica i el seu valor com a eina de cohesió familiar i cultural.'
+prompt:
+  id: generacio_9
+  path: data/prompts/v1/generacio_9.txt
+  sha256: b900189de6e4123e3cf58085c44323ad021694898741b7a1f7c3c03345b682b2
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-10T19:15:24.761610Z'

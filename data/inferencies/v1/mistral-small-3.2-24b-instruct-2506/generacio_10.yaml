@@ -1,0 +1,46 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 146e34c4b13d9535f6eeeaa0a65d0480cce3edadb18587a3404eb76187357882
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: mistral-small-3.2-24b-instruct-2506
+  model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
+  revision: main
+output:
+  answer: La ruta literària pel meu municipi ha estat una experiència molt enriquidora.
+    He pogut reconèixer carrers i llocs que han servit d'inspiració a autors locals,
+    com ara Joanot Martorell o Vicent Andrés Estellés. Això m'ha permès entendre millor
+    les seves obres i veure la literatura des d'una perspectiva més humana i propera.
+    A més, he descobert detalls històrics i culturals del meu propi entorn que desconeixia.
+    Aquesta experiència m'ha motivat a llegir més obres d'autors locals i a explorar
+    la riquesa literària de la meva terra. Com a objectiu lingüístic per al trimestre
+    següent, em proposo d'aprendre més vocabulari en català i millorar la meva expressió
+    escrita, per tal de poder apreciar i crear textos literaris amb major profunditat
+    i precisió.
+prompt:
+  id: generacio_10
+  path: data/prompts/v1/generacio_10.txt
+  sha256: 146e34c4b13d9535f6eeeaa0a65d0480cce3edadb18587a3404eb76187357882
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

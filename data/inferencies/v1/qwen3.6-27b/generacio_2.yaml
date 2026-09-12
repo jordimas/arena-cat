@@ -1,0 +1,50 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 1465ed1a69826973ffe4e08c151b5a7c6d3e935066a27bcd1d1ba692272c7057
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: qwen3.6-27b
+  model_name: Qwen/Qwen3.6-27B
+  revision: main
+output:
+  answer: 'Hola a tothom! Avui us vull explicar una tradició única de Catalunya: els
+    castells. Són torres humanes impressionants que demostren la força del treball
+    en equip. Imagina-vos una base massissa, anomenada pinya, on la gent s''abraça
+    fort per sostenir el pes. Sobre aquesta base, els castellers pugen formant el
+    tronc, l''estructura principal. Al final, un nen o nena molt lleugera, l''enxaneta,
+    puja al capdamunt i aixeca un braç per completar la torre. Aquest espectacle no
+    és només acrobàcia; és cultura viva. La nostra consigna és «força, equilibri,
+    valor i seny». La força física és necessària, però també cal equilibri per no
+    caure, valor per superar la por d''altura i, sobretot, seny, és a dir, bon sentit
+    i prudència. Sense aquests quatre pilars, el castell no es pot aixecar. És una
+    metàfora perfecta de la nostra societat: tots junts, respectant-nos i ajudant-nos,
+    aconseguim coses impossibles si ho fem sols. Us convido a veure''ls en acció,
+    és una experiència que us deixarà sense paraules. Gràcies per escoltar-me i gaudiu
+    de la demostració que veureu ara mateix.'
+prompt:
+  id: generacio_2
+  path: data/prompts/v1/generacio_2.txt
+  sha256: 1465ed1a69826973ffe4e08c151b5a7c6d3e935066a27bcd1d1ba692272c7057
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-10T17:08:18.892866Z'

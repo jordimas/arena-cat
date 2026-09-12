@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: bf869d1adf44aaad1629ba6cf901ebf64a94b8d7960350b4620d6603277aa06b
@@ -23,15 +24,13 @@ model:
   model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   revision: main
 output:
-  answer: 'Quan el cel es posa trist, les seves núvols s''omplen d''aigua com a butxaques
-    massa carregades. Primer aguanten una mica, després una mica més, fins que no
-    poden amb tantes picoretes. Alora obren la mà i deixen caure gotetes sobre els
-    terrats, els tolls i les fulles del parc.
-
-
-    Això l''anomenem pluja. Algunes gotetes corren ràpid per les finestres i altres
-    es queden quietes, mirant el món a l''inrevés. Quan el núvol es queda tranquil,
-    el sol torna a asomar-se i asseca cada racó amb una manta de llum.'
+  answer: Quan el cel es posa trist, les seves núvols es omplen d'aigua com a butxaques
+    massa carregades. Primer aguanten un poc, després un altre poc més, fins que ja
+    no poden amb tantes esquitxades. Enlloc, obren la mà i deixen caure gotetes sobre
+    els terratos, els cadolles i les fulles del parc. Això l'anomenem pluja. Algunes
+    gotes corren ràpid per les finestres i altres es queden quietetes, mirant el món
+    a l'inrevés. Quan la núvola es queda tranquil·la, el sol torna a asseure's i asseca
+    cada racó amb una manta de llum.
 prompt:
   id: traduccio_6
   path: data/prompts/v1/traduccio_6.txt
@@ -39,6 +38,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

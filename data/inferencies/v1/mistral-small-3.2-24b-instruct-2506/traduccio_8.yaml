@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: c363cffe25cc6980213ee5d8e2f882131b4c98097b9f1a7f52dcecbe1cda1394
@@ -23,19 +24,19 @@ model:
   model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   revision: main
 output:
-  answer: '- L''entrada és a partir de les 16:00; si arribeu abans, aviseu-nos i veurem
+  answer: '- L''entrada és a partir de les 16.00; si arribeu abans, aviseu-nos i veurem
     si la casa ja està llesta.
 
-    - Tanqueu la porta del jardí per la nit: el vent aquí no demana permís.
+    - Tanqueu la barrera del jardí de nit: el vent aquí no demana permís.
 
     - No moureu la taula gran de la terrassa; pesa una barbaritat i després ningú
-    no es recorda com estava.
+    es recorda com estava.
 
-    - A partir de les 23:00, baixeu la música. Els veïns madrugen i tenen més memòria
-    que son.
+    - A partir de les 23.00, baixeu la música. Els veïns madrugen i tenen més memòria
+    que somni.
 
-    - Si trencau alguna cosa, digueu-ho sense problemes. Millor arreglar-ho a temps
-    que trobar la sorpresa el dilluns.'
+    - Si trencau alguna cosa, digueu-ho sense por. Millor arreglar-ho a temps que
+    trobar la sorpresa dilluns.'
 prompt:
   id: traduccio_8
   path: data/prompts/v1/traduccio_8.txt
@@ -43,6 +44,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

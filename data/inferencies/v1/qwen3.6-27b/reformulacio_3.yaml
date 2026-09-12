@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 983c08d58f44c65aa8c97328128222822aed2d2472e1f91d8161039971dbfac9
@@ -23,19 +24,24 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: 'Benvolguts/udes,
+  answer: 'Benvolguts senyors,
 
 
-    Us escric per presentar una queixa formal sobre la falta d''il·luminació pública
-    al nostre carrer. Fa tres setmanes que una de les llums no funciona, la qual cosa
-    provoca una absència total de visibilitat durant la nit. Malgrat les múltiples
-    trucades realitzades, no s''ha pres cap mesura correctiva.
+    Us escrivim per presentar una queixa formal respecte a la deficiència en el servei
+    d''il·luminació pública del nostre carrer. Des de fa tres setmanes, una de les
+    llums del carrer es troba fora de servei, la qual cosa provoca una total falta
+    de visibilitat durant les hores nocturnes. Malgrat les múltiples incidències que
+    hem comunicat telefònicament, no hem rebut cap resposta ni s''ha procedit a la
+    reparació.
 
 
-    A més, cal destacar que ahir es va produir la caiguda d''un veí a causa d''un
-    clot existent a la vorera. Sol·licitem, per tant, que es procedeixi immediatament
-    a la reparació de la llum i a la correcció de l''irregularitat de la vorera per
-    garantir la seguretat ciutadana.
+    A més, cal destacar que ahir va caure una segona llum a causa de la presència
+    d''un clot a la vorera, fet que agreuja la situació de inseguretat i el mal estat
+    de les vies públiques.
+
+
+    Sol·licitem, per tant, que es prenguin les mesures necessàries per restablir el
+    servei i reparar els danys causats a la major brevetat possible.
 
 
     Atentament,'
@@ -46,6 +52,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

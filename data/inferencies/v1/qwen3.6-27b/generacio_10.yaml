@@ -1,0 +1,47 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 146e34c4b13d9535f6eeeaa0a65d0480cce3edadb18587a3404eb76187357882
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: qwen3.6-27b
+  model_name: Qwen/Qwen3.6-27B
+  revision: main
+output:
+  answer: Recórrer els carrers del meu poble seguint les petjades dels escriptors
+    locals ha estat una revelació profunda. Ja no veig només pedres i façanes, sinó
+    històries vives que respiren a cada cantonada. Aquesta immersió m'ha connectat
+    emocionalment amb la nostra tradició literària, transformant la lectura d'una
+    activitat passiva en una experiència tangible i enriquidora. He après a llegir
+    el paisatge urbà com un text obert, on cada detall té un significat. Aquesta connexió
+    m'ha donat una nova perspectiva sobre la identitat cultural que ens defineix.
+    Per al pròxim trimestre, el meu objectiu lingüístic és ampliar el vocabulari específic
+    relacionat amb la toponímia i la descripció paisatgística, per poder expressar
+    amb més precisió i riquesa aquestes sensacions quan escrigui les meves pròpies
+    cròniques literàries.
+prompt:
+  id: generacio_10
+  path: data/prompts/v1/generacio_10.txt
+  sha256: 146e34c4b13d9535f6eeeaa0a65d0480cce3edadb18587a3404eb76187357882
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-10T17:08:18.892866Z'

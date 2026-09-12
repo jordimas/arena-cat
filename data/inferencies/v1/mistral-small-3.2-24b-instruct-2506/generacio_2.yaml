@@ -1,0 +1,58 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 1465ed1a69826973ffe4e08c151b5a7c6d3e935066a27bcd1d1ba692272c7057
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: mistral-small-3.2-24b-instruct-2506
+  model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
+  revision: main
+output:
+  answer: 'Bon dia a tots!
+
+
+    Avui us vull presentar una tradició molt especial de Catalunya: els castells.
+    Els castells són torres humanes que es construeixen per equips, combinant força,
+    equilibri, valor i seny. Aquesta frase resumeix els valors dels castells: la força
+    és la potència física, l''equilibri és la coordinació, el valor és la valentia
+    i el seny és la saviesa i la prudència.
+
+
+    Per construir un castell, primer es forma la pinya, que és la base humana on tots
+    els participants s''agafen i s''equilibren. Damunt la pinya, es forma el tronc,
+    que són les persones que es posen en espatlla per crear l''estructura vertical.
+    Finalment, l''enxaneta és el més petit que puja al capdamunt i alça la mà per
+    fer el castell oficial.
+
+
+    Els castells són una manifestació de treball en equip, tradició i cultura catalana.
+    És una experiència impressionant de veure i, sobretot, de viure!
+
+
+    Gràcies per la vostra atenció!'
+prompt:
+  id: generacio_2
+  path: data/prompts/v1/generacio_2.txt
+  sha256: 1465ed1a69826973ffe4e08c151b5a7c6d3e935066a27bcd1d1ba692272c7057
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

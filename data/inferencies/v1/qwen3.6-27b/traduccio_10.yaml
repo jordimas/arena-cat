@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: e9e1504ae8699d7232b1736bb804d68e0172a6bedf8003f2ad1a5e91d7704cbd
@@ -23,16 +24,16 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: 'Des que surc a córrer per les matines me sento molt millor, encara que
-    al principi em costà agafar el ritme. Em donava mandra aixecar-me, mirava el rellotge
-    cada dos per tres i tornava a casa pensant que això no era per a mi. Ara vaig
-    al gimnàs tres dies a la setmana per fer exercici, una mica de força i una classe
-    d''estiraments que em deixa com nou.
+  answer: 'Des que surto a córrer al matí em sento molt millor, tot i que al principi
+    em costava agafar el ritme. Em donava mandra llevar-me, mirava el rellotge cada
+    dos per tres i tornava a casa pensant que això no era per a mi. Ara vaig al gimnàs
+    tres dies a la setmana per fer exercici, una mica de força i una classe d''estiraments
+    que em deixa com nou.
 
 
-    La meva entrenadora diu que, si continuo així i no em salte les pauses, en un
-    mes notaré un canvi espectacular. Jo no sé si serà per tant, però almenys ja no
-    puge les escales ofegat.'
+    La meva entrenadora diu que, si continuo així i no em salto els descansos, en
+    un mes notaré un canvi espectacular. Jo no sé si serà per tant, però almenys ja
+    no puge les escales ofegant-me.'
 prompt:
   id: traduccio_10
   path: data/prompts/v1/traduccio_10.txt
@@ -40,6 +41,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

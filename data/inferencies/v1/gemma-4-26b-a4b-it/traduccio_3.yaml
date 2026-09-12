@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: fffbd5058309c207ead837773dc28a9c06ad70f2cfe8796fc63bedfbb0f2786e
@@ -23,22 +24,22 @@ model:
   model_name: google/gemma-4-26B-A4B-it
   revision: main
 output:
-  answer: 'Un polll que amb barret somiava amb volar,
+  answer: 'Un polllit amb barret somiava amb volar,
 
-    mirava les mosques i no parava de suspirar.
+    mirava les mosques i es posava a suspirar.
 
-    "Si salto molt alt, tocaré el cotó",
+    Si salto molt alt, tocaré el cotó,
 
     deia molt seriós sobre un botó.
 
 
     Però va venir una brisa i el va fer estornudar,
 
-    i va caure en una sopa sense saber nadar.
+    i va caure a una sopa sense saber nadar.
 
     Des d''aquell dia viatja, feliç i formal,
 
-    en mosca amb cassquet i un bitllet rural.'
+    en mosca amb casc i un bitllet rural.'
 prompt:
   id: traduccio_3
   path: data/prompts/v1/traduccio_3.txt
@@ -46,6 +47,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

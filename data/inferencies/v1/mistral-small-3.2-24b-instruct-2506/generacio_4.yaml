@@ -1,0 +1,76 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 6ae72498618f77ea97f13f2478ca204fac34b7f9e5d7dbd1bea6f907d1bb578c
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: mistral-small-3.2-24b-instruct-2506
+  model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
+  revision: main
+output:
+  answer: 'Dilluns:
+
+    - Llegir i resumir els temes 1 i 2 (45 minuts)
+
+    - Fer un esquema dels temes llegits (15 minuts)
+
+
+    Dimarts:
+
+    - Llegir i resumir els temes 3 i 4 (45 minuts)
+
+    - Fer un esquema dels temes llegits (15 minuts)
+
+
+    Dimecres:
+
+    - Llegir i resumir els temes 5 i 6 (45 minuts)
+
+    - Fer un esquema dels temes llegits (15 minuts)
+
+
+    Dijous:
+
+    - Repassar tots els esquemes fets (30 minuts)
+
+    - Pràctica de preguntes i respostes amb els esquemes (30 minuts)
+
+
+    Divendres:
+
+    - Repàs general de tot el material (30 minuts)
+
+    - Autoavaluació amb preguntes de l''examen (30 minuts)
+
+
+    Consells:
+
+    1. Utilitza tècniques de memòria com mnemotècniques per recordar dades importants.
+
+    2. Descansa bé abans de l''examen per estar fresc i concentrar-te millor.'
+prompt:
+  id: generacio_4
+  path: data/prompts/v1/generacio_4.txt
+  sha256: 6ae72498618f77ea97f13f2478ca204fac34b7f9e5d7dbd1bea6f907d1bb578c
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

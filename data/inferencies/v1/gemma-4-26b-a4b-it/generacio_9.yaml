@@ -1,0 +1,46 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: b900189de6e4123e3cf58085c44323ad021694898741b7a1f7c3c03345b682b2
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: gemma-4-26b-a4b-it
+  model_name: google/gemma-4-26B-A4B-it
+  revision: main
+output:
+  answer: 'La gastronomia catalana representa un dels pilars fonamentals de la identitat
+    cultural i el patrimoni immaterial de la societat. Dins d''aquest context, la
+    transmissió de receptes familiars actua com un vehicle essencial per preservar
+    la memòria col·lectiva i els vincles afectius entre generacions. El present treball
+    d''investigació explora com aquest coneixement culinari es transmet i es transforma
+    en l''àmbit domèstic a través del temps. Per tant, s''planteja la següent pregunta
+    de recerca: de què manera la pràctica culinària familiar contribueix a la preservació
+    de la identitat cultural catalana? Per respondre-hi, s''utilitzarà una metodologia
+    mixta que combina l''anàlisi de receptaris tradicionals amb la realització d''entrevistes
+    semiestructurades a diversos membres de la família.'
+prompt:
+  id: generacio_9
+  path: data/prompts/v1/generacio_9.txt
+  sha256: b900189de6e4123e3cf58085c44323ad021694898741b7a1f7c3c03345b682b2
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

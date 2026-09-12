@@ -1,0 +1,56 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 6ae72498618f77ea97f13f2478ca204fac34b7f9e5d7dbd1bea6f907d1bb578c
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: gemma-4-26b-a4b-it
+  model_name: google/gemma-4-26B-A4B-it
+  revision: main
+output:
+  answer: 'Dia 1: Lectura i comprensió de l''era de la Constitució i l''edat de la
+    Renaixença. Fes notes sobre els fets clau.
+
+    Dia 2: Elaboració d''esquemes detallats sobre l''industrialització i els moviments
+    socials del segle XIX.
+
+    Dia 3: Estudi de la segona meitat del segle XIX fins a la Guerra Civil. Connecta
+    causes i conseqüències.
+
+    Dia 4: Repàs general de tots els esquemes i lectura ràpida de les notes de comprensió.
+
+    Dia 5: Simulacre d''examen. Respon preguntes d''examen anteriors i comprova els
+    punts on tens dubtes.
+
+
+    Consells:
+
+    Utilitza mapes històrics per situar els conflictes geogràficament.
+
+    Explica els temes en veu alta per assegurar que els conceptes estan integrats.'
+prompt:
+  id: generacio_4
+  path: data/prompts/v1/generacio_4.txt
+  sha256: 6ae72498618f77ea97f13f2478ca204fac34b7f9e5d7dbd1bea6f907d1bb578c
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 1b3f806e9d0b67bab73cf6395e0c2a867ea89c90536ee0b37b6a87b330dde853
@@ -23,19 +24,19 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: 'MARTA: Fa tres dies que li dic al meu pare que truca a la companyia, perquè
-    el wifi va molt lent.
+  answer: 'MARTA: Fa tres dies que li dic al meu pare que truqui a la companyia, perquè
+    el wifi va lentíssim.
 
     NIL: De nou? Si la setmana passada vas dir que ja ho havien arreglat.
 
-    MARTA: Això va dir ell, però no m’ho crec. Ahir em va caure la videotrucada de
-    classe dues vegades i després el grup va començar a enviar-me mems com si fos
-    culpa meva.
+    MARTA: Això va dir ell, però no m’ho empasso. Ahir se’m va tallar la trucada de
+    vídeo de classe dues vegades i després el grup va començar a enviar-me mems com
+    si fos culpa meva.
 
-    NIL: Potser és el router, que ja és un vell de la primera.
+    NIL: Potser és el router, que ja és més vell que el món.
 
-    MARTA: Doncs si això segueix així, demà vaig a la botiga. I si cal, em porto el
-    tècnic del cul.'
+    MARTA: Doncs si això continua així, demà vaig a la botiga. I si cal, hi porto
+    el tècnic de la orella.'
 prompt:
   id: traduccio_1
   path: data/prompts/v1/traduccio_1.txt
@@ -43,6 +44,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

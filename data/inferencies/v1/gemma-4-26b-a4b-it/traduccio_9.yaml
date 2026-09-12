@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 11788666b977ceb87beb847841499c9a770a348f3291a366fd7990ca4bfc837d
@@ -24,10 +25,10 @@ model:
   revision: main
 output:
   answer: 'Quan arriba la nit, la nena dobra la roba sobre la cadira, es posa el seu
-    pijama preferit i es munta al llit amb l''osset de peluche que ja té una orella
-    torcida. La seva mare deixa la porta entreberta perquè hi entri una ràpiga de
-    llum del passadís, i la casa comença a parlar baixet: cruix una fusta, sospira
-    una finestra, s''apaga l''últim grifo.
+    pijama preferit i es meteix al llit amb l''osset de peluche que ja té una orella
+    torcida. La seva mare deixa la porta entreberta perquè hi entri una línia de llum
+    del passadís, i la casa comença a parlar baixet: cruix una fusta, sospira una
+    finestra, s''apaga l''últim grif.
 
 
     Des de l''habitació es veu el cel ple d''estrelles. Una d''elles, la més petita,
@@ -40,6 +41,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

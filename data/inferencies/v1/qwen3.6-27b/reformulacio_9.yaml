@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: a39d7a6a7f1372d48f0bd7b5c98d9e0af6a9e276789899df3abf95e10e783692
@@ -23,11 +24,12 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: Estàs preparat per desafiar-te el proper 12 d'octubre? Les inscripcions
-    a la nostra cursa popular de 10 quilòmetres ja estan obertes. Una prova oberta
-    a totes les edats on podràs demostrar la teva força i passió per l'esport. Les
-    places són limitades, així que no esperis més per reservar la teva. Inclou samarreta
-    oficial i avituallament. Uneix-te a la comunitat i corre amb nosaltres.
+  answer: Prepara les teves cames per al gran repte! El 12 d'octubre correu els 10
+    quilòmetres que ens definiran com a comunitat. Obert a totes les edats, aquest
+    és el teu moment de brillar i superar límits. Les places són molt limitades, així
+    que no esperis més. Inclou samarreta exclusiva i avituallament complet. Uneix-te
+    a nosaltres i viu l'emoció de la meta. Inscriu-te ara i forma part d'aquesta gran
+    família esportiva.
 prompt:
   id: reformulacio_9
   path: data/prompts/v1/reformulacio_9.txt
@@ -35,6 +37,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

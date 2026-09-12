@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: af1487949a676806680275298f4324ad21ae64086dc489621374b119f5e85669
@@ -23,18 +24,18 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: 'Benvolgut client:
+  answer: 'Estimat client:
 
 
-    El seu comandes VX-48291 arribarà més tard del previst perquè un camió es va quedar
-    aturat al nostre centre de Riba-roja i va alterar tota la ruta de distribució.
+    El seu comandes VX-48291 arribarà més tard del previst perquè un camió va quedar
+    retenció al nostre centre de Riba-roja i va alterar tota la ruta de distribució.
     El nou període de lliurament és el 18 de setembre, entre les 9.00 i les 14.00
     hores.
 
 
     Si el retard supera els vuit dies naturals, podrà cancel·lar la compra sense cost
-    o sol·licitar un enviament alternatiu. Guardeu aquest avís i el justificant, ja
-    que us estalviaran gestions si heu de presentar una reclamació.'
+    o sol·licitar un enviament alternatiu. Conserveu aquest avís i el rebut, ja que
+    us evitaran complicacions si cal fer una reclamació.'
 prompt:
   id: traduccio_5
   path: data/prompts/v1/traduccio_5.txt
@@ -42,6 +43,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

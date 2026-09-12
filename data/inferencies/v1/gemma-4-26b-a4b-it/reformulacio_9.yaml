@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: a39d7a6a7f1372d48f0bd7b5c98d9e0af6a9e276789899df3abf95e10e783692
@@ -23,11 +24,11 @@ model:
   model_name: google/gemma-4-26B-A4B-it
   revision: main
 output:
-  answer: Ja està aquí el moment que esperaves! Les inscripcions per a la nostra gran
-    cursa popular del 12 d'octubre ja estan obertes. Somena 10 quilòmetres de pura
-    superació i energia. No importa l'edat que tinguis, aquí et som esperem. Les places
-    són molt limitades i inclouen la samarreta oficial i l'avituallament. No et quedis
-    fora i reserva el teu lloc ara mateix. Som equip!
+  answer: Ja està aquí el moment que esperaves. Les inscripcions per a la nostra cursa
+    popular del 12 d'octubre ja estan obertes. Somany de 10 quilòmetres de pura superació
+    on totes les edats són benvingudes. No esperis més perquè les places són limitades.
+    Reserva la teva i assegura la teva samarreta i l'avituallament. Som un equip,
+    som una família. Som un club, som corrent units. Inscriu't ara i supera't.
 prompt:
   id: reformulacio_9
   path: data/prompts/v1/reformulacio_9.txt
@@ -35,6 +36,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

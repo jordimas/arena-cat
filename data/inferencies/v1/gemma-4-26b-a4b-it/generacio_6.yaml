@@ -1,0 +1,42 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: eaa539615cf7cee896781aa66a54d1b71dbdf92f9a365e185bb24cf62f6f4a50
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: gemma-4-26b-a4b-it
+  model_name: google/gemma-4-26B-A4B-it
+  revision: main
+output:
+  answer: 'Hola a tots! Com va la cosa? He pensat que estaria bé si ens juntem per
+    estudiar literatura catalana i no arribar a l''examen amb el mal de cap. Proposo
+    que ens vegem al cafè de la plaça aquest dijous a les quatre de la tarda, i que
+    estiguem unes dues hores. Per no perdre el temps, repartim el treball: jo m''encarreco
+    de la poesia, en Marc de la narrativa, la Mireia del teatre i en Pau del context
+    històric. Què us sembla? Digueu-me si us va bé!'
+prompt:
+  id: generacio_6
+  path: data/prompts/v1/generacio_6.txt
+  sha256: eaa539615cf7cee896781aa66a54d1b71dbdf92f9a365e185bb24cf62f6f4a50
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

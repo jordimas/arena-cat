@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: a39d7a6a7f1372d48f0bd7b5c98d9e0af6a9e276789899df3abf95e10e783692
@@ -23,10 +24,10 @@ model:
   model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   revision: main
 output:
-  answer: '🏃‍♂️🏃‍♀️ Preparats per moure-vos amb nosaltres? S''obren les inscripcions
-    per a la Cursa Popular del 12 d''octubre! 10 km d''emoció i superació per a tothom.
-    Places limitades amb samarreta i avituallament inclòs. No us ho perdiu! #CorreAmbNosaltres
-    #12D''Octubre'
+  answer: '"🏃‍♂️🏃‍♀️ Inscripcions obertes per a la nostra Cursa Popular del 12 d''octubre!
+    10 km per a tots els corrents, sense límits d''edat. Places limitades! A més,
+    et regalem samarreta i avituallament. No et perdis aquesta oportunitat de superar-te
+    i divertir-te. Anima''t i inscriu-te avui mateix! #CorreAmbNosaltres #Esport #Supera''t"'
 prompt:
   id: reformulacio_9
   path: data/prompts/v1/reformulacio_9.txt
@@ -34,6 +35,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

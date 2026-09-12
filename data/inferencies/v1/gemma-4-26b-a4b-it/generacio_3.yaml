@@ -1,0 +1,48 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 55b02646ac4f5b342716bffeda24d1cf986e97729c337743598518570b4bfa51
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: gemma-4-26b-a4b-it
+  model_name: google/gemma-4-26B-A4B-it
+  revision: main
+output:
+  answer: 'El modernisme català
+
+
+    A finals del segle XIX, Catalunya vivia una època de gran creixement econòmic
+    i cultural. En aquest context va néixer el modernisme, un moviment que volia renovar
+    l''art i mostrar la identitat catalana a través de la bellesa i la creativitat.
+    Els artistes modernistes buscaven inspiració en la natura per allunyar-se de la
+    monotonia de les fàbriques. Un dels seus trets principals és l''ús de formes orgàniques;
+    per exemple, imagina una balconada que sembla una liana o una flor de ferro forjat.
+    Un altre element clau és l''ornamentació abundant, com les façanes de les cases
+    cobertes de mosaics de colors o ceràmica brillant que semblen joies. Aquest estil
+    va transformar les ciutats, fent-les més vives, colorides i plenes de vida.'
+prompt:
+  id: generacio_3
+  path: data/prompts/v1/generacio_3.txt
+  sha256: 55b02646ac4f5b342716bffeda24d1cf986e97729c337743598518570b4bfa51
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

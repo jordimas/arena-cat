@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 03b96945b4a2e85f25248115c78ed48faeb7a6b127e9f677959f4a2cd7bcc69c
@@ -23,16 +24,16 @@ model:
   model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   revision: main
 output:
-  answer: '¡Hola, gent! Com el divendres fem pont, estava pensant que podríem anar
-    a la platja d''hora, abans que això es posi impossible. Si algú porta als petits,
+  answer: 'Hola a tothom! Com el divendres fem pont, estava pensant que podríem anar
+    a la platja de bon matí, abans que s''ompli de gent. Si algú porta els petits,
     hi ha una zona de joc al costat del quiosc, però convé arribar abans que no quedi
-    ni una ombra.
+    cap ombra.
 
 
-    Jo porto la para-sol gran, una nevera amb begudes i unes cartes pel cas que es
-    lleve vent. El que no controlo és la menjar: bocadillos, amanida, tortilla, el
-    que veieu. Qui se''n anima i qui pot passar a buscar a Clara sense lliar-la com
-    l''última vegada?'
+    Jo portaré la para-sol gran, una nevera amb begudes i unes cartes per si es lleva
+    vent. Allò que no controlo és el menjar: entrepans, amanida, tortilla, el que
+    us sembli. Qui s''anima i qui pot passar a buscar la Clara sense fer un embolic
+    com l''última vegada?'
 prompt:
   id: traduccio_4
   path: data/prompts/v1/traduccio_4.txt
@@ -40,6 +41,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

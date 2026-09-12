@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: b5117c5a7c7b9b56aa0750a29f46ddfdea71fae64696ba8f02e0ebd6436cd902
@@ -23,14 +24,14 @@ model:
   model_name: google/gemma-4-26B-A4B-it
   revision: main
 output:
-  answer: Querida part de mi, ja sóc a Girona. El tren ha arribat amb vint minuts
-    de retard, i mentre esperava sota la marquesina, sentia la pluja caure suaament
-    sobre nosaltres. Porto la maleta vermella, la carpeta amb els meus documents de
-    matrícula i l'adreça del pis a Sant Narcís. Abans d'agafar l'autobús, he trucat
-    a la mare per assegurar-li que tot va bé; necessitava sentir la seva veu en aquest
-    començament. Ara, amb tot el pes de les coses, només penso que demà al matí tinc
-    la primera reunió d'acollida a la facultat. Comença una etapa nova i tot sembla
-    tan nou i estrany alhora.
+  answer: Finalment he arribat a Girona, tot i que el tren ha tardat vint minuts més
+    del previst. Quan he sortit de l'estació, la pluja caia de manera suau i veia
+    molta gent esperant sota la marquesina. Mentre caminava amb la meva maleta vermella,
+    la carpeta amb els documents de matrícula i l'adreça del pis a Sant Narcís, he
+    sentit una barreja de nervis i il·lusió. Abans d'agafar l'autobús, he trucat a
+    la meva mare per assegurar-li que tot anava bé. Ara només em queda descansar,
+    perquè demà al matí tinc la primera reunió d'acollida a la facultat. Comença una
+    etapa nova en aquesta ciutat.
 prompt:
   id: reformulacio_7
   path: data/prompts/v1/reformulacio_7.txt
@@ -38,6 +39,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

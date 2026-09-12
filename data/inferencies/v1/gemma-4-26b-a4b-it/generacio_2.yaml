@@ -1,0 +1,46 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 1465ed1a69826973ffe4e08c151b5a7c6d3e935066a27bcd1d1ba692272c7057
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: gemma-4-26b-a4b-it
+  model_name: google/gemma-4-26B-A4B-it
+  revision: main
+output:
+  answer: 'Hola a tots! Avui us vull presentar una tradició única de Catalunya: els
+    castells. Imagreu-vos grups de persones aixecant-se unes sobre unes altres per
+    formar torres humanes increïbles. Per aconseguir-ho, necessitem tres parts clau.
+    Primer, la pinya, que és la base sòlida de gent que ofereix suport i seguretat.
+    Després, el tronc, que és la part central i l''estructura que sosté tot el pes.
+    Finalment, l''enxaneta, el nen o la nena que puja fins a l''extrem superior i
+    aixeca el braç per indicar que el castell s''ha completat. Tot això es resumeix
+    en quatre valors: força per aguantar el pes, equilibri per no caure, valor per
+    pujar a l''altura i seny per actuar amb intel·ligència i ordre. És un treball
+    d''equipament màxim on ningú no és més important que l''altre.'
+prompt:
+  id: generacio_2
+  path: data/prompts/v1/generacio_2.txt
+  sha256: 1465ed1a69826973ffe4e08c151b5a7c6d3e935066a27bcd1d1ba692272c7057
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-11T01:27:16.356926Z'

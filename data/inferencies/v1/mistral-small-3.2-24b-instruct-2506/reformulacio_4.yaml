@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 1c3ee7a30f0de599d46f00cdc5ec9771a02790f8f0789cd9ab37277d9f3ce5e7
@@ -23,11 +24,10 @@ model:
   model_name: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   revision: main
 output:
-  answer: Això que diuen és que la senyora alcaldessa ha dit que avui mateix comencen
-    a treure els gossos de la plaça. Jo crec que el projecte és més xicotet del que
-    deien al principi, però igualment, servira per netejar una mica el carrer entre
-    la botiga del senyor Jaume, on venen les enciamades, i l'estàtua del dansaire
-    que hi ha al costat de l'ajuntament.
+  answer: Avui de bon matí, l'alcaldessa ens ha dit que ja comencen amb aquell projecte
+    de treure els gossos del centre del poble. Sembla que serà més petit del que deien
+    al principi, però crec que amb això arreglaran una mica l'espai entre la botiga
+    d'enciams del carrer Pujol i l'estàtua de l'home dansaire.
 prompt:
   id: reformulacio_4
   path: data/prompts/v1/reformulacio_4.txt
@@ -35,6 +35,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

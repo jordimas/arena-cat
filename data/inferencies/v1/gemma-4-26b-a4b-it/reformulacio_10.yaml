@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: e19385eb7bdecef29a82db0a611c3f1b5d8372854bc9c07eaf53ff61a4b4f514
@@ -23,11 +24,11 @@ model:
   model_name: google/gemma-4-26B-A4B-it
   revision: main
 output:
-  answer: Per protegir millor el seu compte, pot activar un sistema de seguretat extra.
-    A més de la seva contrasenya habitual, quan vulgui entrar, el sistema li enviarà
-    un petit codi de números al seu telèfon. D'aquesta manera, encara que algú intentés
-    robar-li la contrasenya per engany, no podria entrar al seu compte perquè li faltaria
-    aquest codi que només vostè rep al seu mòbil.
+  answer: 'Per protegir la seva informació, activi una seguretat extra: a més de la
+    teva contrasenya habitual, el sistema li enviarà un número de control al seu telèfon
+    cada vegada que vulgui entrar. Així, encara que algú intenti enganyar-lo per robar-li
+    la contrasenya, no podrà entrar al seu compte perquè necessitarà també aquest
+    número que només vostè rebrà al seu mòbil.'
 prompt:
   id: reformulacio_10
   path: data/prompts/v1/reformulacio_10.txt
@@ -35,6 +36,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

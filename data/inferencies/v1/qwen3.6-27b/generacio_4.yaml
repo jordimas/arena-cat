@@ -1,0 +1,66 @@
+backend:
+  engine: transformers
+  torch_version: 2.12.1+cu130
+  transformers_version: 5.12.1
+fingerprint:
+  generation:
+    max_new_tokens: 1024
+    min_token_len: 25
+    system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
+      respon exclusivament en llengua catalana. Contesta només amb el que es demana
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
+    temperature: 0.7
+    top_p: 0.9
+  prompt_sha256: 6ae72498618f77ea97f13f2478ca204fac34b7f9e5d7dbd1bea6f907d1bb578c
+generation:
+  max_new_tokens: 1024
+  min_token_len: 25
+  seed: 42
+  temperature: 0.7
+  top_p: 0.9
+model:
+  id: qwen3.6-27b
+  model_name: Qwen/Qwen3.6-27B
+  revision: main
+output:
+  answer: 'Dia 1: Introducció i context europeu. Llegeix els apartats inicials sobre
+    el segle XIX i la industrialització. Fes un esquema mental dels fets clau i les
+    dates fonamentals. Dedica els últims vint minuts a resumir oralment els conceptes
+    principals per assegurar la comprensió bàsica.
+
+
+    Dia 2: La Restauració i la crisi del sistema. Analitza les forces polítiques i
+    socials. Crea una taula comparativa dels partits i els seus objectius. Relaciona
+    aquests fets amb l''evolució econòmica catalana. Repassa l''esquema del dia anterior
+    per mantenir la connexió cronològica.
+
+
+    Dia 3: La Renaixença i la cultura. Estudia els moviments culturals i la llengua.
+    Esquematitza les figures clau i les seves obres. Connecta la cultura amb la política
+    de l''època. Fes preguntes hipotètiques per provar la teva capacitat d''anàlisi
+    crítica.
+
+
+    Dia 4: La Guerra Civil i la postguerra. Revisa els fets militars i les conseqüències
+    socials. Dibuixa una línia del temps detallada. Integra tota la informació anterior
+    en un gran mapa conceptual que unifiqui els temes.
+
+
+    Dia 5: Repàs intensiu i autoavaluació. Resol exàmens anteriors o preguntes tipus
+    test. Identifica els punts febles i revisa''ls ràpidament. Simula l''examen real
+    amb temps limitat per entrenar la gestió del temps.
+
+
+    Consells: Mantén l''entorn d''estudi lliure de distraccions digitals. Posa en
+    pràctica la repetició espaiada per consolidar la memòria a llarg termini.'
+prompt:
+  id: generacio_4
+  path: data/prompts/v1/generacio_4.txt
+  sha256: 6ae72498618f77ea97f13f2478ca204fac34b7f9e5d7dbd1bea6f907d1bb578c
+reasoning:
+  content: null
+run:
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
+  seed: 42
+  timestamp: '2026-09-10T17:08:18.892866Z'

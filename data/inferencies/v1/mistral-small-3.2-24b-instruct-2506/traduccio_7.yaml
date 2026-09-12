@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: cc5e623da9ca16fb2ef8b6792436064bb9ebbad02cb3aa9efc30d138d9efdf5b
@@ -24,14 +25,14 @@ model:
   revision: main
 output:
   answer: 'Xiquets, si encara no sabeu on menjar aquest cap de setmana, us recomano
-    un lloc nou al costat del port, just abans d''arribar a la plaça petita. Per fora
-    sembla poca cosa, però dins tenen una barra preciosa, el peix arriba a migdia
-    i el cambrer et explica la carta com si et contés un secret.
+    un lloc nou al costat del port, just abans d''arribar a la plaça petita. Des de
+    fora no sembla res del altre món, però dins tenen una barra preciosa, el peix
+    arriba a migdia i el cambrer et explica la carta com si et contés un secret.
 
 
-    El menú no és res barat, aviso, però val cada euro que costa. Això sí: cal reservar,
-    perquè dissabte passat van deixar a mitja cua a la carretera. Anem o ho deixem
-    per quan cobrem tots?'
+    El menú no és gens barat, us aviso, però val cada euro que costa. Això sí: cal
+    reservar, perquè dissabte passat van deixar mitja fila a la porta. ¿Hi anem o
+    ho deixem per quan cobrem tots?'
 prompt:
   id: traduccio_7
   path: data/prompts/v1/traduccio_7.txt
@@ -39,6 +40,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'

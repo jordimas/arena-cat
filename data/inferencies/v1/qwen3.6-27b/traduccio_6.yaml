@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: bf869d1adf44aaad1629ba6cf901ebf64a94b8d7960350b4620d6603277aa06b
@@ -23,13 +24,13 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: Quan el cel es posa trist, les seues núvols s’omplen d’aigua. Són com butxaques
-    massa carregades. Primer aguanten un xic. Després, un xic més. Fins que no poden
-    més amb tantes cosquilles. Llavors obren la mà. Deixen caure gotetes sobre els
-    teulats. També sobre els remulls i les fulles del parc. Això ho anomenem pluja.
-    Algunes gotes corren per les finestres. Altres es queden quietes. Miren el món
-    al revés. Quan la núvol es calma, el sol torna a aparèixer. Asseca cada racó amb
-    una manta de llum.
+  answer: Quan el cel es posa trist, les seues nubes s’omplen d’aigua. Són com butxaques
+    massa carregades. Primer aguanten un xic, després un xic més. Ja no poden amb
+    tantes cosquilles. Llavors obren la mà i deixen caure gotetes. Cauen sobre els
+    teulats, els bassals i les fulles del parc. Això ho anomenem pluja. Algunes gotes
+    corren depressa per les finestres. Altres queden quietes, mirant el món al revés.
+    Quan la núvol es calma, el sol torna a eixir. Asseca cada racó amb una manta de
+    llum.
 prompt:
   id: traduccio_6
   path: data/prompts/v1/traduccio_6.txt
@@ -37,6 +38,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

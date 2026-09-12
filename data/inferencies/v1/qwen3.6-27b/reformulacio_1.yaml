@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 96eebac24581fd928fb364bbcf2c7e3ff096a6287eec32cce4daedf05580534c
@@ -23,11 +24,11 @@ model:
   model_name: Qwen/Qwen3.6-27B
   revision: main
 output:
-  answer: 'La derivada és com mesurar quina velocitat té una cosa en un instant concret.
-    La integral és com sumar petits trossos per saber quina quantitat total s''ha
-    acumulat, com l''àrea sota una línia. Aquestes dues operacions són com inverses:
-    si derives una funció i després l''integres, tornes a tenir la funció original,
-    i viceversa, sempre que la línia sigui contínua.'
+  answer: 'Imagina que la derivada és com mesurar la velocitat exacta d''un cotxe
+    en un moment concret, mentre que la integral és com sumar tota la distància que
+    ha recorregut. Aquestes dues eines són com dues cares de la mateixa moneda: si
+    primer mires com canja alguna cosa i després sumes aquests canvis, tornes a trobar
+    el punt on havies començat, sempre que el procés sigui suau i continu.'
 prompt:
   id: reformulacio_1
   path: data/prompts/v1/reformulacio_1.txt
@@ -35,6 +36,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-10T19:15:24.761610Z'

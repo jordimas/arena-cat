@@ -8,7 +8,8 @@ fingerprint:
     min_token_len: 25
     system_prompt: Ets un assistent d'intel·ligència artificial útil, precís i que
       respon exclusivament en llengua catalana. Contesta només amb el que es demana
-      sense cap explicació ni text addicional.
+      sense cap explicació ni text addicional. Contesta sempre en text pla, sense
+      format Markdown o HTML ni elements com ara taules.
     temperature: 0.7
     top_p: 0.9
   prompt_sha256: 1c3ee7a30f0de599d46f00cdc5ec9771a02790f8f0789cd9ab37277d9f3ce5e7
@@ -23,10 +24,10 @@ model:
   model_name: google/gemma-4-26B-A4B-it
   revision: main
 output:
-  answer: A l'alba d'avui, l'alcaldessa ha dit que ja comencen les obres per treure
-    els gossos del mig del poble. Aquest treball, que és més curt del que havien dit
-    al principi, m'imagino que servirà per deixar més espai entre la botiga d'enciams
-    del carrer Pujol i l'estàtua de l'home dansaire.
+  answer: Aquesta matí l'alcaldessa ha dit que avui mateix comencen les obres per
+    treure els gossos del centre del poble. Aquest treball, que és més curt del que
+    havien dit al principi, jo crec que el faran per deixar més espai entre la botiga
+    d'enciams del carrer Pujol i l'estàtua de l'home dansaire.
 prompt:
   id: reformulacio_4
   path: data/prompts/v1/reformulacio_4.txt
@@ -34,6 +35,6 @@ prompt:
 reasoning:
   content: null
 run:
-  git_commit: 9d9f80fd991094346282a50e572b9443c5963493
+  git_commit: 90464ad734b421a6fe7218280b40c12266f5c749
   seed: 42
-  timestamp: '2026-08-26T05:31:14.776144Z'
+  timestamp: '2026-09-11T01:27:16.356926Z'
