@@ -22,6 +22,7 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 # El model de dades i la configuració viuen al paquet backend/app.
@@ -36,6 +37,7 @@ from app.models import Category, Prompt, Response  # noqa: E402
 LOGGER = logging.getLogger("carrega_inferencies")
 
 DEFAULT_VERSION = "v1"
+DEFAULT_CATEGORIES_FILE = REPO_ROOT / "data" / "prompts" / "categories.yaml"
 DEFAULT_PROMPTS_DIR = REPO_ROOT / "data" / "prompts" / DEFAULT_VERSION
 DEFAULT_INFERENCIES_DIR = REPO_ROOT / "data" / "inferencies" / DEFAULT_VERSION
 
@@ -70,6 +72,52 @@ class SchemaError(Exception):
     Es fa servir per a camps obligatoris absents, tipus inesperats o referències
     a entitats desconegudes (categoria o prompt).
     """
+
+
+class CategoryCatalogError(ValueError):
+    """El catàleg no existeix o no compleix l'esquema esperat."""
+
+
+class CategoryDefinition(BaseModel):
+    """Metadades d'una categoria declarada al catàleg."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    code: str = Field(pattern=r"^[a-z][a-z0-9_]*$")
+    name: str
+    description: str | None = None
+    evaluation_instructions: str
+
+    @field_validator("name", "evaluation_instructions")
+    @classmethod
+    def validate_required_text(cls, value: str) -> str:
+        """Normalitza els textos obligatoris i rebutja cadenes buides."""
+        value = value.strip()
+        if not value:
+            raise ValueError("el nom no pot ser buit")
+        return value
+
+
+class CategoryCatalog(BaseModel):
+    """Document arrel del fitxer YAML."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    categories: list[CategoryDefinition]
+
+
+def load_category_catalog(path: Path | str) -> list[CategoryDefinition]:
+    """Llegeix i valida un catàleg YAML de categories."""
+    path = Path(path)
+    try:
+        document = CategoryCatalog.model_validate(yaml.safe_load(path.read_text(encoding="utf-8")))
+    except (OSError, yaml.YAMLError, ValidationError) as error:
+        raise CategoryCatalogError(f"catàleg de categories no vàlid ({path}): {error}") from error
+
+    codes = [category.code for category in document.categories]
+    if len(codes) != len(set(codes)):
+        raise CategoryCatalogError("el catàleg conté codis de categoria duplicats")
+    return document.categories
 
 
 @dataclass(slots=True)
@@ -363,6 +411,28 @@ def load_prompts(
         upsert_prompt(session, record, category_ids, stats)
 
 
+def load_categories(
+    session: Session,
+    definitions: list[CategoryDefinition],
+) -> dict[str, int]:
+    """Sincronitza el catàleg i retorna els identificadors per codi."""
+    categories = {category.code: category for category in session.scalars(select(Category)).all()}
+
+    for definition in definitions:
+        category = categories.get(definition.code)
+        if category is None:
+            category = Category(code=definition.code)
+            categories[definition.code] = category
+            session.add(category)
+
+        category.name = definition.name
+        category.description = definition.description
+        category.evaluation_instructions = definition.evaluation_instructions
+
+    session.flush()
+    return {definition.code: categories[definition.code].id for definition in definitions}
+
+
 def load_responses(session: Session, inferencies_dir: Path, version: str, stats: Stats) -> None:
     """Carrega totes les inferències d'un directori (recursivament).
 
@@ -387,6 +457,7 @@ def run_load(
     prompts_dir: Path | str,
     inferencies_dir: Path | str,
     version: str | None = None,
+    categories_file: Path | str = DEFAULT_CATEGORIES_FILE,
 ) -> Summary:
     """Carrega prompts i inferències dins de la sessió donada.
 
@@ -407,8 +478,8 @@ def run_load(
     inferencies_dir = Path(inferencies_dir)
     version = version or prompts_dir.name
 
-    category_ids = {category.code: category.id for category in session.scalars(select(Category))}
-
+    categories = load_category_catalog(categories_file)
+    category_ids = load_categories(session, categories)
     summary = Summary(prompts=Stats(), responses=Stats())
     load_prompts(session, prompts_dir, version, category_ids, summary.prompts)
     load_responses(session, inferencies_dir, version, summary.responses)
@@ -432,10 +503,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         description="Càrrega idempotent de prompts i inferències a la base de dades.",
     )
     parser.add_argument(
+        "--categories-file",
+        type=Path,
+        default=DEFAULT_CATEGORIES_FILE,
+        help="Fitxer YAML amb el catàleg de categories.",
+    )
+    parser.add_argument(
         "--prompts-dir",
         type=Path,
         default=DEFAULT_PROMPTS_DIR,
-        help="Directori amb els fitxers YAML de prompts.",
+        help="Directori amb els fitxers de text dels prompts.",
     )
     parser.add_argument(
         "--inferencies-dir",
@@ -470,7 +547,17 @@ def main(argv: list[str] | None = None) -> int:
     logging.basicConfig(level=args.log_level, format="%(levelname)s:%(name)s:%(message)s")
 
     with get_sessionmaker()() as session:
-        summary = run_load(session, args.prompts_dir, args.inferencies_dir, args.version)
+        try:
+            summary = run_load(
+                session,
+                args.prompts_dir,
+                args.inferencies_dir,
+                args.version,
+                categories_file=args.categories_file,
+            )
+        except CategoryCatalogError as error:
+            LOGGER.error("%s", error)
+            return 1
         session.commit()
 
     print(f"Prompts:   {_format_stats(summary.prompts)}")

@@ -5,8 +5,10 @@ de manera que queden aïllats entre si.
 """
 
 from datetime import UTC, datetime
+from pathlib import Path
 
 import pytest
+import yaml
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
@@ -17,7 +19,9 @@ from app.db import Base, get_db
 from app.main import app
 from app.models import User
 from app.security import compute_email_hash, hash_password
-from app.seeds import INITIAL_CATEGORIES
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+CATEGORIES_FILE = REPO_ROOT / "data" / "prompts" / "categories.yaml"
 
 DEFAULT_PASSWORD = "ContrasenyaSegura123!"
 
@@ -30,7 +34,8 @@ def engine():
     Base.metadata.drop_all(eng)
     Base.metadata.create_all(eng)
     with Session(eng) as seed_session:
-        seed_session.add_all([models.Category(**c) for c in INITIAL_CATEGORIES])
+        document = yaml.safe_load(CATEGORIES_FILE.read_text(encoding="utf-8"))
+        seed_session.add_all([models.Category(**category) for category in document["categories"]])
         seed_session.commit()
     yield eng
     Base.metadata.drop_all(eng)

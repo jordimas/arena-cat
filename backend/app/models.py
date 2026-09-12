@@ -56,6 +56,7 @@ class Category(Base):
     code: Mapped[str] = mapped_column(String(64), unique=True, nullable=False)
     name: Mapped[str] = mapped_column(String(128), nullable=False)
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    evaluation_instructions: Mapped[str | None] = mapped_column(Text, nullable=True)
 
 
 class Prompt(Base):

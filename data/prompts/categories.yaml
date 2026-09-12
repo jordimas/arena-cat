@@ -1,0 +1,25 @@
+categories:
+  - code: correccio
+    name: Correcció
+    description: Corregeix aquest text.
+    evaluation_instructions: |-
+      - Correcció ortogràfica i gramatical.
+      - Conservació del significat original.
+      - Naturalitat en català.
+      - Absència de canvis innecessaris.
+  - code: reformulacio
+    name: Reformulació
+    description: Reformula aquest text.
+    evaluation_instructions: |-
+      - Conservació del significat i la informació.
+      - Compliment de la reformulació demanada.
+      - Claredat i naturalitat.
+      - Absència d'afegits o omissions rellevants.
+  - code: traduccio
+    name: Traducció
+    description: Tradueix aquest text.
+    evaluation_instructions: |-
+      - Fidelitat al significat original.
+      - Absència d'omissions o informació afegida.
+      - Correcció i naturalitat en català.
+      - Coherència del registre i la terminologia.

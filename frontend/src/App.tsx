@@ -7,7 +7,7 @@ import Login from "./components/Login";
 import RankingView from "./components/RankingView";
 import TaskView from "./components/TaskView";
 import { clearTask } from "./taskStore";
-import type { SessionState } from "./types";
+import type { Category, SessionState } from "./types";
 
 const UNKNOWN: SessionState = { authenticated: false, email: null, email_verified: false };
 
@@ -15,6 +15,8 @@ export default function App() {
   // `null` mentre no sabem si hi ha sessió: sense aquest estat intermedi
   // ensenyaríem el formulari un instant a qui ja té la sessió oberta.
   const [session, setSession] = useState<SessionState | null>(null);
+  const [categories, setCategories] = useState<Category[] | null>(null);
+  const [categoriesError, setCategoriesError] = useState(false);
   const navigate = useNavigate();
 
   const refresh = useCallback(async () => {
@@ -30,6 +32,20 @@ export default function App() {
   useEffect(() => {
     void refresh();
   }, [refresh]);
+
+  const refreshCategories = useCallback(async () => {
+    setCategoriesError(false);
+    try {
+      setCategories(await api.categories());
+    } catch {
+      setCategories(null);
+      setCategoriesError(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    void refreshCategories();
+  }, [refreshCategories]);
 
   // La tasca en curs pertany a la sessió: quan s'acaba, s'ha de descartar. Si no,
   // en tornar a entrar es restauraria amb el `vote_after` ja vençut (i per tant
@@ -96,9 +112,15 @@ export default function App() {
               path="/"
               element={
                 session.authenticated ? (
-                  <TaskView />
+                  categories ? (
+                    <TaskView categories={categories} />
+                  ) : (
+                    <CategoriesStatus error={categoriesError} onRetry={refreshCategories} />
+                  )
+                ) : categories ? (
+                  <RankingView categories={categories} onLogin={() => navigate("/login")} />
                 ) : (
-                  <RankingView onLogin={() => navigate("/login")} />
+                  <CategoriesStatus error={categoriesError} onRetry={refreshCategories} />
                 )
               }
             />
@@ -123,6 +145,23 @@ export default function App() {
           </a>
         </div>
       </footer>
+    </div>
+  );
+}
+
+function CategoriesStatus({ error, onRetry }: { error: boolean; onRetry: () => void }) {
+  return (
+    <div className="px-4 py-10 text-center text-slate-500">
+      {error ? (
+        <>
+          <p role="alert">No s'han pogut carregar les categories.</p>
+          <button type="button" onClick={onRetry} className="mt-3 underline hover:text-brand-600">
+            Torna-ho a provar
+          </button>
+        </>
+      ) : (
+        <p>Carregant categories…</p>
+      )}
     </div>
   );
 }

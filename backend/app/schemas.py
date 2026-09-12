@@ -5,6 +5,19 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field
 from app.models import Winner
 
 
+class CategoryResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    code: str
+    name: str
+    description: str | None
+    evaluation_instructions: str | None
+
+
+class CategoriesResponse(BaseModel):
+    categories: list[CategoryResponse]
+
+
 class TaskResponse(BaseModel):
     category_code: str
     prompt: str

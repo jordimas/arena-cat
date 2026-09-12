@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 
 import { api, ApiError } from "../api";
-import { CATEGORIES, type CategoryFilter, type Ranking } from "../types";
+import type { Category, CategoryFilter, Ranking } from "../types";
 
-export default function RankingView({ onLogin }: { onLogin: () => void }) {
+export default function RankingView({
+  categories,
+  onLogin,
+}: {
+  categories: Category[];
+  onLogin: () => void;
+}) {
   const [category, setCategory] = useState<CategoryFilter>("");
   const [ranking, setRanking] = useState<Ranking | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -39,7 +45,19 @@ export default function RankingView({ onLogin }: { onLogin: () => void }) {
       </p>
 
       <div className="mb-5 inline-flex flex-wrap gap-1 rounded-md border border-slate-200 bg-white p-1">
-        {CATEGORIES.map((item) => (
+        <button
+          type="button"
+          aria-pressed={category === ""}
+          onClick={() => setCategory("")}
+          className={
+            category === ""
+              ? "rounded bg-brand-500 px-3 py-1.5 text-sm font-medium text-white"
+              : "rounded px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
+          }
+        >
+          Global
+        </button>
+        {categories.map((item) => (
           <button
             key={item.code}
             type="button"
@@ -51,7 +69,7 @@ export default function RankingView({ onLogin }: { onLogin: () => void }) {
                 : "rounded px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
             }
           >
-            {item.code === "" ? "Global" : item.label}
+            {item.name}
           </button>
         ))}
       </div>
@@ -71,7 +89,7 @@ export default function RankingView({ onLogin }: { onLogin: () => void }) {
                 <p className="text-sm text-brand-100">
                   {category === ""
                     ? "Global"
-                    : CATEGORIES.find((item) => item.code === category)?.label}
+                    : (categories.find((item) => item.code === category)?.name ?? category)}
                   {" · "}actualitzat amb els vots de la comunitat
                 </p>
               </div>

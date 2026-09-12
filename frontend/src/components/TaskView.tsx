@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { api, ApiError } from "../api";
 import { splitPrompt } from "../diff";
 import { clearTask, loadSavedTask, saveTask, secondsUntilVote } from "../taskStore";
-import { CATEGORIES, type CategoryFilter, type Progress, type Task, type Winner } from "../types";
+import type { Category, CategoryFilter, Progress, Task, Winner } from "../types";
 import Onboarding, { type OnboardingStep } from "./Onboarding";
 import ProgressBar from "./ProgressBar";
 import ResponseCard from "./ResponseCard";
@@ -19,7 +19,7 @@ const VOTE_OPTIONS: {
   { winner: "neither", label: "Cap de les dues", shortcut: "c" },
 ];
 
-export default function TaskView() {
+export default function TaskView({ categories }: { categories: Category[] }) {
   const [category, setCategory] = useState<CategoryFilter>("");
   const [task, setTask] = useState<Task | null>(null);
   const [progress, setProgress] = useState<Progress | null>(null);
@@ -177,6 +177,7 @@ export default function TaskView() {
   }, [locked, task, resolve, showOnboarding]);
 
   const parts = task ? splitPrompt(task.prompt) : null;
+  const taskCategory = categories.find((item) => item.code === task?.category_code);
   const isCorrection = task?.category_code === "correccio";
 
   const onboardingSteps: OnboardingStep[] = [
@@ -238,9 +239,10 @@ export default function TaskView() {
           // automàtic en tocar el desplegable i deixa la pàgina desquadrada.
           className="shrink-0 rounded-md border border-slate-300 px-3 py-2 text-base sm:w-56"
         >
-          {CATEGORIES.map((item) => (
+          <option value="">Qualsevol categoria</option>
+          {categories.map((item) => (
             <option key={item.code} value={item.code}>
-              {item.label}
+              {item.name}
             </option>
           ))}
         </select>
@@ -255,7 +257,12 @@ export default function TaskView() {
       )}
 
       {exhausted && (
-        <Exhausted category={category} progress={progress} onContinue={() => setCategory("")} />
+        <Exhausted
+          category={category}
+          categories={categories}
+          progress={progress}
+          onContinue={() => setCategory("")}
+        />
       )}
 
       {task && parts && (
@@ -272,7 +279,7 @@ export default function TaskView() {
                 Tipus de tasca:
               </span>{" "}
               <span className="text-base font-semibold text-slate-700">
-                {CATEGORIES.find((item) => item.code === task.category_code)?.label}
+                {taskCategory?.name ?? task.category_code}
               </span>
             </p>
             <h3 className="mb-1 text-sm font-semibold tracking-wide text-slate-500 uppercase">
@@ -312,14 +319,26 @@ export default function TaskView() {
               </section>
             ))}
 
-          <p className="mb-3 text-sm">
-            <span className="font-semibold tracking-wide text-slate-500 uppercase">
-              La vostra tasca:
-            </span>{" "}
-            <span className="text-base font-semibold text-slate-700">
-              avaluar la resposta dels dos models.
-            </span>
-          </p>
+          <div className="mb-3">
+            <p className="mb-1 text-sm">
+              <span className="font-semibold tracking-wide text-slate-500 uppercase">
+                La vostra tasca:
+              </span>{" "}
+              <span className="text-base font-semibold text-slate-700">
+                avaluar la resposta dels dos models.
+              </span>
+            </p>
+            {taskCategory?.evaluation_instructions && (
+              <>
+                <p className="mt-3 mb-1 text-sm font-semibold tracking-wide text-slate-500 uppercase">
+                  A tenir en compte:
+                </p>
+                <p className="text-base leading-relaxed whitespace-pre-line text-slate-700">
+                  {taskCategory.evaluation_instructions}
+                </p>
+              </>
+            )}
+          </div>
 
           {isCorrection && <DiffLegend />}
 
@@ -403,14 +422,16 @@ export default function TaskView() {
  */
 function Exhausted({
   category,
+  categories,
   progress,
   onContinue,
 }: {
   category: CategoryFilter;
+  categories: Category[];
   progress: Progress | null;
   onContinue: () => void;
 }) {
-  const label = CATEGORIES.find((item) => item.code === category)?.label;
+  const label = categories.find((item) => item.code === category)?.name ?? category;
   // Sense filtre, el backend ja ha mirat totes les categories. Amb filtre, només ho
   // podem afirmar si tenim el progrés: si ha fallat, oferim continuar, que és el
   // camí segur — mai anunciem el final basant-nos en una xifra que no tenim.

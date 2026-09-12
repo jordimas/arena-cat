@@ -82,7 +82,7 @@ def seed_mock_tasks(
     categories = db.scalars(stmt).all()
 
     if not categories:
-        raise SystemExit("No s'ha trobat cap categoria. Has aplicat les migracions (seeds)?")
+        raise SystemExit("No s'ha trobat cap categoria. Has carregat el catàleg YAML?")
 
     new_prompts = 0
     new_responses = 0

@@ -880,7 +880,7 @@ def test_new_category_added_mid_campaign_is_independent(session):
         - Fase 1: 5 prompts × 3 models a `correccio`. 1800 vots amb gemma
           al 60% (~120 vots/cel·la per obtenir un rànquing clarament estable).
         - Comprovem: sampling de `cultura` retorna None (encara no té prompts).
-        - Creem la categoria `cultura` (no és a `INITIAL_CATEGORIES`) i
+        - Creem la categoria `cultura` (no és al catàleg YAML) i
           afegim 3 prompts × 3 respostes.
         - Fase 2: 800 vots a `cultura` amb salamandra al 60% (3 prompts ×
           3 parelles = 9 cel·les → ~89 vots/cel·la, prou generós).

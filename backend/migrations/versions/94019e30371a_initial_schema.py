@@ -12,8 +12,6 @@ import sqlalchemy as sa
 from alembic import op
 from sqlalchemy.dialects import postgresql
 
-from app.seeds import INITIAL_CATEGORIES
-
 revision: str = "94019e30371a"
 down_revision: str | Sequence[str] | None = None
 branch_labels: str | Sequence[str] | None = None
@@ -27,6 +25,7 @@ def upgrade() -> None:
         sa.Column("code", sa.String(length=64), nullable=False),
         sa.Column("name", sa.String(length=128), nullable=False),
         sa.Column("description", sa.Text(), nullable=True),
+        sa.Column("evaluation_instructions", sa.Text(), nullable=True),
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("code"),
     )
@@ -100,16 +99,6 @@ def upgrade() -> None:
     )
     op.create_index("ix_votes_created_at", "votes", ["created_at"], unique=False)
     op.create_index("ix_votes_prompt_id", "votes", ["prompt_id"], unique=False)
-
-    op.bulk_insert(
-        sa.table(
-            "categories",
-            sa.column("code", sa.String),
-            sa.column("name", sa.String),
-            sa.column("description", sa.Text),
-        ),
-        INITIAL_CATEGORIES,
-    )
 
 
 def downgrade() -> None:
