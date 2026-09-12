@@ -7,7 +7,7 @@ import pytest
 import yaml
 from sqlalchemy import func, select
 
-from app.models import Prompt, Response
+from app.models import Category, Prompt, Response
 
 # L'script viu a scripts/ (projecte arrel), fora del paquet backend.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
@@ -61,6 +61,63 @@ def dirs(tmp_path):
 
 def _count(session, model) -> int:
     return session.scalar(select(func.count()).select_from(model))
+
+
+def write_categories(
+    path: Path,
+    name: str = "Cultura",
+    evaluation_instructions: str = "Comprova quatre aspectes importants.",
+) -> None:
+    """Escriu un catàleg mínim per provar-ne la sincronització."""
+    path.write_text(
+        f"""categories:
+  - code: cultura
+    name: {name}
+    description: Avalua coneixements culturals.
+    evaluation_instructions: {evaluation_instructions}
+""",
+        encoding="utf-8",
+    )
+
+
+def test_categories_are_inserted_updated_and_loaded_idempotently(session, dirs, tmp_path):
+    prompts_dir, inferencies_dir = dirs
+    categories_file = tmp_path / "categories.yaml"
+    write_categories(categories_file)
+
+    loader.run_load(session, prompts_dir, inferencies_dir, categories_file=categories_file)
+    loader.run_load(session, prompts_dir, inferencies_dir, categories_file=categories_file)
+    write_categories(
+        categories_file,
+        name="Cultura catalana",
+        evaluation_instructions="Comprova quatre criteris culturals.",
+    )
+    loader.run_load(session, prompts_dir, inferencies_dir, categories_file=categories_file)
+
+    category = session.scalar(select(Category).where(Category.code == "cultura"))
+    assert category.name == "Cultura catalana"
+    assert category.evaluation_instructions == "Comprova quatre criteris culturals."
+    assert (
+        session.scalar(select(func.count()).select_from(Category).where(Category.code == "cultura"))
+        == 1
+    )
+
+
+@pytest.mark.parametrize(
+    "document",
+    [
+        "categories: [{code: correccio}]",
+        "categories: [{code: 'Còrrecció', name: Correcció}]",
+        "categories: [{code: correccio, name: Correcció, extra: true}]",
+        "categories: [{code: correccio, name: Correcció}, {code: correccio, name: Altra}]",
+    ],
+)
+def test_invalid_category_catalog_is_rejected(tmp_path, document):
+    categories_file = tmp_path / "categories.yaml"
+    categories_file.write_text(document, encoding="utf-8")
+
+    with pytest.raises(loader.CategoryCatalogError):
+        loader.load_category_catalog(categories_file)
 
 
 def test_prompt_is_inserted_with_derived_category(session, dirs):

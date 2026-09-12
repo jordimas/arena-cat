@@ -22,7 +22,7 @@ Des de l'arrel del repositori:
 Des de `backend/`:
 
     uv sync                                  # instal·la dependències
-    uv run alembic upgrade head              # aplica migracions i seeds
+    uv run alembic upgrade head              # aplica les migracions
     uv run python scripts/auth_flow_demo.py
 
 Opcions:

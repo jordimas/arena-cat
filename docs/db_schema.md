@@ -11,6 +11,7 @@ erDiagram
         varchar(64) code
         varchar(128) name
         text description
+        text evaluation_instructions
     }
 
     prompts {
