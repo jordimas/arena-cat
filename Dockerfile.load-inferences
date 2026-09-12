@@ -12,6 +12,7 @@ WORKDIR /app
 
 COPY backend/app /app/backend/app
 COPY scripts/carrega_inferencies.py /app/scripts/carrega_inferencies.py
+COPY data/prompts/categories.yaml /app/data/prompts/categories.yaml
 COPY data/prompts/v1 /app/data/prompts/v1
 COPY data/inferencies/v1 /app/data/inferencies/v1
 
